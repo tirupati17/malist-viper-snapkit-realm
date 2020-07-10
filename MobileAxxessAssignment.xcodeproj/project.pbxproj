@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,9 @@
 		D56D15D824B80EFB00690142 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15D324B80EFB00690142 /* ListInteractor.swift */; };
 		D56D15D924B80EFB00690142 /* ListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15D424B80EFB00690142 /* ListWireframe.swift */; };
 		D56D15DC24B80F4E00690142 /* App+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15DB24B80F4E00690142 /* App+Extension.swift */; };
+		D56D15E124B819F900690142 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E024B819F900690142 /* ListTableViewCell.swift */; };
+		D56D15E324B81EF600690142 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E224B81EF600690142 /* BaseTableViewCell.swift */; };
+		D56D15E524B8202400690142 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E424B8202400690142 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,11 +89,14 @@
 		D56D15CA24B80D1200690142 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		D56D15CC24B80D8000690142 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D56D15D024B80EFB00690142 /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
-		D56D15D124B80EFB00690142 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D56D15D124B80EFB00690142 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		D56D15D224B80EFB00690142 /* ListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProtocols.swift; sourceTree = "<group>"; };
 		D56D15D324B80EFB00690142 /* ListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInteractor.swift; sourceTree = "<group>"; };
 		D56D15D424B80EFB00690142 /* ListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWireframe.swift; sourceTree = "<group>"; };
 		D56D15DB24B80F4E00690142 /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
+		D56D15E024B819F900690142 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		D56D15E224B81EF600690142 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		D56D15E424B8202400690142 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		E3DBCA1652015A3159801E28 /* libPods-MobileAxxessAssignmentTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileAxxessAssignmentTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,7 +138,6 @@
 				03E11D799CC6DF8790DACEBC /* Pods-MobileAxxessAssignmentUITests.debug.xcconfig */,
 				D2D38EF0ED8A3E0EF62A8062 /* Pods-MobileAxxessAssignmentUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -270,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				D56D15C724B80C8300690142 /* Logger.swift */,
+				D56D15E424B8202400690142 /* Protocols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 		D56D15CF24B80E8600690142 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				D56D15DD24B8191E00690142 /* Cells */,
 				D56D15D024B80EFB00690142 /* ListPresenter.swift */,
 				D56D15D124B80EFB00690142 /* ListViewController.swift */,
 				D56D15D224B80EFB00690142 /* ListProtocols.swift */,
@@ -308,6 +315,15 @@
 				D56D15DB24B80F4E00690142 /* App+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		D56D15DD24B8191E00690142 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D56D15E024B819F900690142 /* ListTableViewCell.swift */,
+				D56D15E224B81EF600690142 /* BaseTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EE4B412918AB37EAAA51E5A0 /* Frameworks */ = {
@@ -549,6 +565,9 @@
 				D56D15C024B80C2F00690142 /* BaseViewController.swift in Sources */,
 				D56D15CB24B80D1200690142 /* Challenge.swift in Sources */,
 				D56D158124B80A0100690142 /* AppDelegate.swift in Sources */,
+				D56D15E324B81EF600690142 /* BaseTableViewCell.swift in Sources */,
+				D56D15E524B8202400690142 /* Protocols.swift in Sources */,
+				D56D15E124B819F900690142 /* ListTableViewCell.swift in Sources */,
 				D56D15D824B80EFB00690142 /* ListInteractor.swift in Sources */,
 				D56D15D624B80EFB00690142 /* ListViewController.swift in Sources */,
 				D56D15C824B80C8300690142 /* Logger.swift in Sources */,
@@ -663,7 +682,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -717,7 +736,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 open class BaseViewController: UIViewController {
+    
+    var didSetupConstraints = false
     
     var activityIndicator: UIActivityIndicatorView?
     lazy var refreshControl: UIRefreshControl = {
@@ -107,6 +110,14 @@ extension BaseViewController {
 
 extension BaseViewController {
     
+    func prefersLargeTitles() {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+
     func setupNavigationBackButton() {
 
     }

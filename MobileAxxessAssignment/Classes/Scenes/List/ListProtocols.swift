@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum DataType {
+    case kImage
+    case kText
+}
+
 protocol ListWireframeProtocol: WireframeProtocol {
 }
 
@@ -18,4 +23,11 @@ protocol ListPresenterProtocol: PresenterProtocol {
 }
 
 protocol ListInteractorProtocol: InteractorProtocol {
+}
+
+protocol ListViewItemProtocol {
+    var id: String { get }
+    var type: DataType { get }
+    var dateString: String { get }
+    var data: String { get }
 }

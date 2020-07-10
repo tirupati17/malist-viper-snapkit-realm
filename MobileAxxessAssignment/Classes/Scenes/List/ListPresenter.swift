@@ -17,6 +17,12 @@ final class ListPresenter {
     private let interactor: ListInteractorProtocol
     private let wireframe: ListWireframeProtocol
 
+    var challenges: [Challenge] = [] {
+        didSet {
+            
+        }
+    }
+    
     // MARK: - Lifecycle -
 
     init(view: ListViewProtocol, interactor: ListInteractorProtocol, wireframe: ListWireframeProtocol) {
