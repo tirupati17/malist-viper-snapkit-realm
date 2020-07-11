@@ -37,9 +37,8 @@ extension BaseViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupDefaultActivityIndicator()
+        setupDefaultActivityIndicator()        
         Logger.log("viewDidLoad \(type(of: self))")
-        
     }
     
     /**
@@ -110,14 +109,6 @@ extension BaseViewController {
 
 extension BaseViewController {
     
-    func prefersLargeTitles() {
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
-    }
-
     func setupNavigationBackButton() {
 
     }

@@ -22,6 +22,7 @@ final class ListViewController: BaseViewController {
     // MARK: - Lifecycle -
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
         setupTableView()
     }
@@ -30,7 +31,7 @@ final class ListViewController: BaseViewController {
     override func updateViewConstraints() {
         if (!didSetupConstraints) {
             listTableView.snp.makeConstraints { make in
-                make.size.equalTo(self.view.frame.size)
+                make.edges.equalToSuperview()
             }
             
             didSetupConstraints = true
@@ -40,12 +41,10 @@ final class ListViewController: BaseViewController {
     
     // MARK: - Methdos -
     func setupView() {
-        self.title = "Challenges"
+        self.navigationItem.title = "Challenges"
         
         view.addSubview(self.listTableView)
         view.setNeedsUpdateConstraints()
-        
-        self.prefersLargeTitles()
     }
         
     func setupTableView() {
@@ -64,18 +63,15 @@ extension ListViewController: ListViewProtocol {
 
 // MARK: - UITableViewDataSource -
 extension ListViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 40
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as! ListTableViewCell
-        cell.textLabel?.text = "\(indexPath.row)"
+        
+        cell.configureCell(nil)
         return cell
     }
     

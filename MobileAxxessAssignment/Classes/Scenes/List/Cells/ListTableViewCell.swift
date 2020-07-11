@@ -13,30 +13,39 @@ class ListTableViewCell: BaseTableViewCell {
     
     // MARK: - Properties -
     var dateLabel: UILabel = {
-        let lable = UILabel()
-        lable.font = .systemFont(ofSize: 12)
-        return lable
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.text = "23 Apr 2020"
+        return label
     }()
 
     var dataImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = #imageLiteral(resourceName: "clock")
         return imageView
     }()
 
-    var dataLabel: UILabel = {
+    var dataDisplayLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
+        label.sizeToFit()
+        label.text = "data heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata here"
+        label.numberOfLines = 0
         return label
     }()
 
     // MARK: - Implementation -
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupView()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -44,6 +53,21 @@ class ListTableViewCell: BaseTableViewCell {
     // MARK: - Constraints -
     override func updateConstraints() {
         if (!didSetupConstraints) {
+            self.dateLabel.snp.makeConstraints { make in
+                make.top.equalToSuperview().inset(5)
+                make.leading.trailing.equalToSuperview().inset(10)
+            }
+            
+            self.dataImageView.snp.makeConstraints { make in
+                make.top.equalTo(self.dateLabel.snp.bottom).offset(5)
+                make.leading.trailing.equalToSuperview().inset(10)
+            }
+            
+            self.dataDisplayLabel.snp.makeConstraints { make in
+                make.top.equalTo(self.dataImageView.snp.bottom).offset(5)
+                make.leading.trailing.equalToSuperview().inset(10)
+                make.bottom.equalToSuperview().inset(5)
+            }
             
             didSetupConstraints = true
         }
@@ -51,9 +75,11 @@ class ListTableViewCell: BaseTableViewCell {
     }
     
     // MARK: - Methods -
-
     func setupView() {
-        //
+        contentView.addSubview(self.dateLabel)
+        contentView.addSubview(self.dataImageView)
+        contentView.addSubview(self.dataDisplayLabel)
+
         setNeedsUpdateConstraints()
     }
 
@@ -66,7 +92,7 @@ class ListTableViewCell: BaseTableViewCell {
                         self.dataImageView.kf.setImage(with: url)
                     }
                 default:
-                    self.dataLabel.text = data.data
+                    self.dataDisplayLabel.text = data.data
             }
         }
     }
