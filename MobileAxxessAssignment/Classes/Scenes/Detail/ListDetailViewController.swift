@@ -15,16 +15,6 @@ final class ListDetailViewController: BaseViewController {
     var presenter: ListDetailPresenterProtocol!
 
     // MARK: - Properties -
-    var dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 14)
-        label.textColor = .black
-        label.layer.cornerRadius = 3
-        label.layer.masksToBounds = true
-        label.backgroundColor = UIColor.white.withAlphaComponent(0.3)
-        return label
-    }()
-
     var dataImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -54,21 +44,14 @@ final class ListDetailViewController: BaseViewController {
     // MARK: - Constraints -
     override func updateViewConstraints() {
         if (!didSetupConstraints) {
-            self.dateLabel.snp.makeConstraints { make in
-                make.top.equalTo(self.topbarHeight + 5)
-                make.leading.trailing.equalToSuperview().inset(5)
-                make.height.equalTo(25)
-            }
             
             self.dataImageView.snp.makeConstraints { make in
-                make.top.equalTo(self.dateLabel.snp.bottom)
-                make.leading.trailing.bottom.equalToSuperview()
+                make.edges.equalToSuperview()
             }
 
             self.dataDisplayLabel.snp.makeConstraints { make in
-                make.top.equalTo(self.dateLabel.snp.bottom).offset(5)
-                make.leading.trailing.equalToSuperview().inset(5)
-                make.bottom.equalToSuperview().inset(5)
+                make.top.equalToSuperview().offset(self.topbarHeight)
+                make.leading.trailing.bottom.equalToSuperview()
             }
 
             didSetupConstraints = true
@@ -81,10 +64,15 @@ final class ListDetailViewController: BaseViewController {
         view.backgroundColor = .white
 
         view.addSubview(self.dataImageView)
-        view.addSubview(self.dateLabel)
         view.addSubview(self.dataDisplayLabel)
 
         view.setNeedsUpdateConstraints()
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(done))
+    }
+        
+    @objc func done() {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
@@ -95,7 +83,7 @@ extension ListDetailViewController: ListDetailViewProtocol {
     
     func updateView(_ challenge: ListViewItemProtocol?) {
         if let challenge = challenge {
-            self.dateLabel.text = " \(challenge.dateString)"
+            self.title = challenge.dateString
                         
             switch challenge.dataType {
                 case .image:

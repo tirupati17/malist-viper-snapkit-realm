@@ -30,7 +30,9 @@ final class ListWireframe: BaseWireframe {
 extension ListWireframe: ListWireframeProtocol {
     
     func showDetail(_ challenge: ListViewItemProtocol?) {
-        self.navigationController?.pushWireframe(ListDetailWireframe(challenge))
+        let nv  = UINavigationController()
+        nv.setRootWireframe(ListDetailWireframe(challenge))
+        self.viewController.present(nv, animated: true, completion: nil)
     }
     
 }
