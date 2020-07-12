@@ -19,3 +19,35 @@ struct Challenge: Codable {
         case id, type, date, data
     }
 }
+
+extension Challenge: ListViewItemProtocol {
+    var dateString: String {
+        if let date = self.date, let dateObject = Constants.DateFormatter.response.dateFromString(date) {
+            return Constants.DateFormatter.display.stringFromDate(dateObject)
+        } else {
+            return ""
+        }
+    }
+    
+    var dataString: String {
+        return self.data ?? ""
+    }
+    
+    var dataType: DataType {
+        if let type = self.type {
+            switch type {
+            case "text":
+                return DataType.text
+            default:
+                return DataType.image
+            }
+        }
+        return DataType.text
+    }
+        
+    var idString: String {
+        return self.id ?? ""
+    }
+        
+}
+

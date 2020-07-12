@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+*/
+
+//NetworkError
+"default_connection_error_title" = "Network Error";
+"default_connection_error_description" = "Please check your network connnectivity.";
+"default_connection_error_confirm_button" = "Okay";
+
+//Home
+"done" = "Done";
+
+//Common
+"no_result_found" = "No result found";
+"na" = "NA";

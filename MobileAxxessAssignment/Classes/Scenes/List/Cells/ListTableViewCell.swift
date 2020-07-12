@@ -14,15 +14,17 @@ class ListTableViewCell: BaseTableViewCell {
     // MARK: - Properties -
     var dateLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12)
-        label.text = "23 Apr 2020"
+        label.font = .systemFont(ofSize: 14)
+        label.layer.cornerRadius = 3
+        label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
         return label
     }()
 
     var dataImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = #imageLiteral(resourceName: "clock")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 3
         return imageView
     }()
 
@@ -30,8 +32,10 @@ class ListTableViewCell: BaseTableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
         label.sizeToFit()
-        label.text = "data heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata heredata here"
         label.numberOfLines = 0
+        
+        label.layer.cornerRadius = 3
+        label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
         return label
     }()
 
@@ -83,16 +87,23 @@ class ListTableViewCell: BaseTableViewCell {
         setNeedsUpdateConstraints()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.dataDisplayLabel.text = nil
+        self.dataImageView.image = nil
+    }
+    
     func configureCell(_ data: ListViewItemProtocol?) {
         if let data = data {
             self.dateLabel.text = data.dateString
-            switch data.type {
-                case .kImage:
-                    if let url = URL(string: data.data) {
-                        self.dataImageView.kf.setImage(with: url)
+                        
+            switch data.dataType {
+                case .image:
+                    if let url = URL(string: data.dataString) {
+                        self.dataImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
                     }
                 default:
-                    self.dataDisplayLabel.text = data.data
+                    self.dataDisplayLabel.text = data.dataString
             }
         }
     }

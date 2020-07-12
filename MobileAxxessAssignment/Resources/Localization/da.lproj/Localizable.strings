@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+*/
+
+//NetworkError
+"default_connection_error_title" = "Netværksfejl";
+"default_connection_error_description" = "Kontroller din netværksforbindelse.";
+"default_connection_error_confirm_button" = "Okay";
+
+//Home
+"done" = "Færdig";
+
+//Common
+"no_result_found" = "Intet resultat fundet";
+"na" = "NA";

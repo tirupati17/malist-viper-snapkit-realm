@@ -21,11 +21,16 @@ struct Constants {
     
     enum DateFormatter {
         case response
-
+        case display
+        
         func formatter() -> Foundation.DateFormatter {
             switch self {
                 case .response:
                     return utcFormatter(string: "MM/dd/yyyy")
+                case .display:
+                    let localFormatter = Foundation.DateFormatter()
+                    localFormatter.dateStyle = .full
+                    return localFormatter
             }
         }
         

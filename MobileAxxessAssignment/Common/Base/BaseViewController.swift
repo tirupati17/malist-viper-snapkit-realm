@@ -19,7 +19,7 @@ open class BaseViewController: UIViewController {
         let refreshControl = UIRefreshControl()
         return refreshControl
     }()
- 
+    
     deinit {
         Logger.log("Deinit \(type(of: self))")
     }

@@ -33,7 +33,9 @@
 		D56D15DC24B80F4E00690142 /* App+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15DB24B80F4E00690142 /* App+Extension.swift */; };
 		D56D15E124B819F900690142 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E024B819F900690142 /* ListTableViewCell.swift */; };
 		D56D15E324B81EF600690142 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E224B81EF600690142 /* BaseTableViewCell.swift */; };
-		D56D15E524B8202400690142 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E424B8202400690142 /* Protocols.swift */; };
+		D56D15E824BAC5FD00690142 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E724BAC5FD00690142 /* CommonProtocols.swift */; };
+		D56D15EE24BAC7E900690142 /* LocalizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15EA24BAC7E900690142 /* LocalizationKey.swift */; };
+		D56D15EF24BAC7E900690142 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D56D15EB24BAC7E900690142 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +94,10 @@
 		D56D15DB24B80F4E00690142 /* App+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Extension.swift"; sourceTree = "<group>"; };
 		D56D15E024B819F900690142 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		D56D15E224B81EF600690142 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		D56D15E424B8202400690142 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		D56D15E724BAC5FD00690142 /* CommonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonProtocols.swift; sourceTree = "<group>"; };
+		D56D15EA24BAC7E900690142 /* LocalizationKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationKey.swift; sourceTree = "<group>"; };
+		D56D15EC24BAC7E900690142 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D56D15ED24BAC7E900690142 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E3DBCA1652015A3159801E28 /* libPods-MobileAxxessAssignmentTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileAxxessAssignmentTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -194,6 +199,7 @@
 		D56D15B024B80A3B00690142 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D56D15E924BAC7E900690142 /* Localization */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 		D56D15B324B80A5F00690142 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D56D15E624BAC5E600690142 /* Protocols */,
 				D56D15DA24B80F3E00690142 /* Extension */,
 				D56D15C924B80CE000690142 /* Models */,
 				D56D15C624B80C6200690142 /* Utilities */,
@@ -269,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				D56D15C724B80C8300690142 /* Logger.swift */,
-				D56D15E424B8202400690142 /* Protocols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -318,6 +324,23 @@
 				D56D15E224B81EF600690142 /* BaseTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		D56D15E624BAC5E600690142 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D56D15E724BAC5FD00690142 /* CommonProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D56D15E924BAC7E900690142 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D56D15EA24BAC7E900690142 /* LocalizationKey.swift */,
+				D56D15EB24BAC7E900690142 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		EE4B412918AB37EAAA51E5A0 /* Frameworks */ = {
@@ -420,6 +443,7 @@
 			knownRegions = (
 				en,
 				Base,
+				da,
 			);
 			mainGroup = D56D157424B80A0100690142;
 			productRefGroup = D56D157E24B80A0100690142 /* Products */;
@@ -439,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56D158D24B80A0700690142 /* LaunchScreen.storyboard in Resources */,
+				D56D15EF24BAC7E900690142 /* Localizable.strings in Resources */,
 				D56D158A24B80A0700690142 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,9 +582,10 @@
 				D56D15C124B80C2F00690142 /* BaseWireframe.swift in Sources */,
 				D56D15C024B80C2F00690142 /* BaseViewController.swift in Sources */,
 				D56D15CB24B80D1200690142 /* Challenge.swift in Sources */,
+				D56D15E824BAC5FD00690142 /* CommonProtocols.swift in Sources */,
+				D56D15EE24BAC7E900690142 /* LocalizationKey.swift in Sources */,
 				D56D158124B80A0100690142 /* AppDelegate.swift in Sources */,
 				D56D15E324B81EF600690142 /* BaseTableViewCell.swift in Sources */,
-				D56D15E524B8202400690142 /* Protocols.swift in Sources */,
 				D56D15E124B819F900690142 /* ListTableViewCell.swift in Sources */,
 				D56D15D824B80EFB00690142 /* ListInteractor.swift in Sources */,
 				D56D15D624B80EFB00690142 /* ListViewController.swift in Sources */,
@@ -611,6 +637,15 @@
 				D56D158C24B80A0700690142 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D56D15EB24BAC7E900690142 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D56D15EC24BAC7E900690142 /* en */,
+				D56D15ED24BAC7E900690142 /* da */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -36,3 +36,19 @@ extension UINavigationController {
     }
 
 }
+
+extension Data {
+    
+    func toModel<T: Decodable>(_ model: T.Type) throws -> T? {
+        return try JSONDecoder().decode(model, from: self)
+    }
+    
+}
+
+extension String {
+    
+    func localizedString() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
+}
