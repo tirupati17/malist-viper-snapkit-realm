@@ -69,6 +69,7 @@ final class ListViewController: BaseViewController {
     }
         
     func setupTableView() {
+        listTableView.backgroundView = UIView()
         listTableView.tableFooterView = UIView() //To remove extra cell lines
         listTableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0) // For full line separator
         
@@ -116,7 +117,9 @@ extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.cellIdentifier, for: indexPath) as! ListTableViewCell
-        cell.configureCell(self.presenter.item(at: indexPath))
+        if let object = self.presenter.item(at: indexPath) {
+            cell.configureCell(object)
+        }
         return cell
     }
     
@@ -127,6 +130,7 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        self.presenter.didSelectItem(at: indexPath)
     }
     
 }

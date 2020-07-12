@@ -36,6 +36,11 @@
 		D56D15E824BAC5FD00690142 /* CommonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15E724BAC5FD00690142 /* CommonProtocols.swift */; };
 		D56D15EE24BAC7E900690142 /* LocalizationKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15EA24BAC7E900690142 /* LocalizationKey.swift */; };
 		D56D15EF24BAC7E900690142 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D56D15EB24BAC7E900690142 /* Localizable.strings */; };
+		D56D15F624BB73A000690142 /* ListDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F124BB73A000690142 /* ListDetailPresenter.swift */; };
+		D56D15F724BB73A000690142 /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F224BB73A000690142 /* ListDetailViewController.swift */; };
+		D56D15F824BB73A000690142 /* ListDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F324BB73A000690142 /* ListDetailProtocols.swift */; };
+		D56D15F924BB73A000690142 /* ListDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F424BB73A000690142 /* ListDetailInteractor.swift */; };
+		D56D15FA24BB73A000690142 /* ListDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F524BB73A000690142 /* ListDetailWireframe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +103,11 @@
 		D56D15EA24BAC7E900690142 /* LocalizationKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationKey.swift; sourceTree = "<group>"; };
 		D56D15EC24BAC7E900690142 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D56D15ED24BAC7E900690142 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D56D15F124BB73A000690142 /* ListDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailPresenter.swift; sourceTree = "<group>"; };
+		D56D15F224BB73A000690142 /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		D56D15F324BB73A000690142 /* ListDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailProtocols.swift; sourceTree = "<group>"; };
+		D56D15F424BB73A000690142 /* ListDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailInteractor.swift; sourceTree = "<group>"; };
+		D56D15F524BB73A000690142 /* ListDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailWireframe.swift; sourceTree = "<group>"; };
 		E3DBCA1652015A3159801E28 /* libPods-MobileAxxessAssignmentTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileAxxessAssignmentTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -291,6 +301,7 @@
 		D56D15CE24B80E7A00690142 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D56D15F024BB738300690142 /* Detail */,
 				D56D15CF24B80E8600690142 /* List */,
 			);
 			path = Scenes;
@@ -341,6 +352,18 @@
 				D56D15EB24BAC7E900690142 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		D56D15F024BB738300690142 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D56D15F124BB73A000690142 /* ListDetailPresenter.swift */,
+				D56D15F224BB73A000690142 /* ListDetailViewController.swift */,
+				D56D15F324BB73A000690142 /* ListDetailProtocols.swift */,
+				D56D15F424BB73A000690142 /* ListDetailInteractor.swift */,
+				D56D15F524BB73A000690142 /* ListDetailWireframe.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		EE4B412918AB37EAAA51E5A0 /* Frameworks */ = {
@@ -580,6 +603,7 @@
 				D56D158524B80A0100690142 /* SplashViewController.swift in Sources */,
 				D56D15DC24B80F4E00690142 /* App+Extension.swift in Sources */,
 				D56D15C124B80C2F00690142 /* BaseWireframe.swift in Sources */,
+				D56D15FA24BB73A000690142 /* ListDetailWireframe.swift in Sources */,
 				D56D15C024B80C2F00690142 /* BaseViewController.swift in Sources */,
 				D56D15CB24B80D1200690142 /* Challenge.swift in Sources */,
 				D56D15E824BAC5FD00690142 /* CommonProtocols.swift in Sources */,
@@ -591,11 +615,15 @@
 				D56D15D624B80EFB00690142 /* ListViewController.swift in Sources */,
 				D56D15C824B80C8300690142 /* Logger.swift in Sources */,
 				D56D15D724B80EFB00690142 /* ListProtocols.swift in Sources */,
+				D56D15F824BB73A000690142 /* ListDetailProtocols.swift in Sources */,
+				D56D15F724BB73A000690142 /* ListDetailViewController.swift in Sources */,
 				D56D15C524B80C2F00690142 /* InteractorProtocol.swift in Sources */,
 				D56D15C224B80C2F00690142 /* ViewProtocol.swift in Sources */,
 				D56D15D524B80EFB00690142 /* ListPresenter.swift in Sources */,
+				D56D15F624BB73A000690142 /* ListDetailPresenter.swift in Sources */,
 				D56D15C324B80C2F00690142 /* PresenterProtocol.swift in Sources */,
 				D56D15CD24B80D8000690142 /* Constants.swift in Sources */,
+				D56D15F924BB73A000690142 /* ListDetailInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

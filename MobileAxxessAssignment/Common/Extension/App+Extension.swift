@@ -23,6 +23,16 @@ extension UIViewController {
         present(wireframe.viewController, animated: animated, completion: completion)
     }
 
+    var topbarHeight: CGFloat {
+        // NOTE: statusBarFrame was deprecated in iOS13
+        if #available(iOS 13.0, *) {
+            return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        } else {
+            return UIApplication.shared.statusBarFrame.size.height +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        }
+    }
 }
 
 extension UINavigationController {

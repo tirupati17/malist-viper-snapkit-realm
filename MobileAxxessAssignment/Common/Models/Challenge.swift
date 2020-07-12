@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import RealmSwift
 
 // MARK: - Carfit
-struct Challenge: Codable {
-    let id: String?
-    let type: String?
-    let date: String?
-    let data: String?
+class Challenge: Object, Codable {
+    @objc dynamic var id: String?
+    @objc dynamic var type: String?
+    @objc dynamic var date: String?
+    @objc dynamic var data: String?
 
     enum CodingKeys: String, CodingKey {
         case id, type, date, data

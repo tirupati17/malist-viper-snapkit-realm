@@ -24,6 +24,7 @@ enum DataType: String {
 }
 
 protocol ListWireframeProtocol: WireframeProtocol {
+    func showDetail(_ challenge: ListViewItemProtocol?)
 }
 
 protocol ListViewProtocol: ViewProtocol {
@@ -44,7 +45,7 @@ protocol ListPresenterProtocol: PresenterProtocol {
     // MARK - Table View
     func numberOfSections() -> Int
     func numberOrItems(in section: Int) -> Int
-    func item(at indexPath: IndexPath) -> ListViewItemProtocol
+    func item(at indexPath: IndexPath) -> ListViewItemProtocol?
     func didSelectItem(at indexPath: IndexPath)
 }
 

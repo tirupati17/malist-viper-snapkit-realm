@@ -14,9 +14,10 @@ class ListTableViewCell: BaseTableViewCell {
     // MARK: - Properties -
     var dateLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 14)
         label.layer.cornerRadius = 3
-        label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+        label.layer.masksToBounds = true
+        label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         return label
     }()
 
@@ -25,6 +26,7 @@ class ListTableViewCell: BaseTableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 3
+        imageView.layer.masksToBounds = true
         return imageView
     }()
 
@@ -33,9 +35,9 @@ class ListTableViewCell: BaseTableViewCell {
         label.font = .systemFont(ofSize: 14)
         label.sizeToFit()
         label.numberOfLines = 0
-        
         label.layer.cornerRadius = 3
-        label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
+        label.layer.masksToBounds = true
+        label.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         return label
     }()
 
@@ -58,8 +60,15 @@ class ListTableViewCell: BaseTableViewCell {
     override func updateConstraints() {
         if (!didSetupConstraints) {
             self.dateLabel.snp.makeConstraints { make in
+                //Inset = Given view is inset from the enclosing view for e.g padding
+                //Inset 5px from top
                 make.top.equalToSuperview().inset(5)
+                
+                //Inset 10px from right and left
                 make.leading.trailing.equalToSuperview().inset(10)
+                
+                //As it is date so make it fixed
+                make.height.equalTo(25)
             }
             
             self.dataImageView.snp.makeConstraints { make in
@@ -70,6 +79,8 @@ class ListTableViewCell: BaseTableViewCell {
             self.dataDisplayLabel.snp.makeConstraints { make in
                 make.top.equalTo(self.dataImageView.snp.bottom).offset(5)
                 make.leading.trailing.equalToSuperview().inset(10)
+                
+                //Inset 5px from bottom
                 make.bottom.equalToSuperview().inset(5)
             }
             
@@ -93,9 +104,13 @@ class ListTableViewCell: BaseTableViewCell {
         self.dataImageView.image = nil
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     func configureCell(_ data: ListViewItemProtocol?) {
         if let data = data {
-            self.dateLabel.text = data.dateString
+            self.dateLabel.text = " \(data.dateString)"
                         
             switch data.dataType {
                 case .image:

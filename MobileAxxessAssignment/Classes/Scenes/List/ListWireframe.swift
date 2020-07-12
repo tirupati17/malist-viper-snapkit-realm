@@ -28,4 +28,9 @@ final class ListWireframe: BaseWireframe {
 // MARK: - Extensions -
 
 extension ListWireframe: ListWireframeProtocol {
+    
+    func showDetail(_ challenge: ListViewItemProtocol?) {
+        self.navigationController?.pushWireframe(ListDetailWireframe(challenge))
+    }
+    
 }

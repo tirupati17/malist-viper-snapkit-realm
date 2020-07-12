@@ -6,8 +6,8 @@
 //  Copyright (c) 2020 Celerstudio. All rights reserved.
 //
 
-
 import Foundation
+import RealmSwift
 
 final class ListPresenter {
 
@@ -17,12 +17,13 @@ final class ListPresenter {
     private let interactor: ListInteractorProtocol
     private let wireframe: ListWireframeProtocol
 
+    var sortBy: DataType = .text
     var challenges: [Challenge] = [] {
         didSet {
-            view.reloadData()
+            self.view.reloadData()
         }
     }
-    var sortBy: DataType = .text
+    
     // MARK: - Lifecycle -
 
     init(view: ListViewProtocol, interactor: ListInteractorProtocol, wireframe: ListWireframeProtocol) {
@@ -36,6 +37,9 @@ final class ListPresenter {
 extension ListPresenter: ListPresenterProtocol {
     
     func getChallenges() {
+        //Reload from offline database
+        self.view.reloadData()
+
         self.view.showProgress()
         self.interactor.fetchChallenges(bodyParams: nil, success: { challenges in
             self.view.hideProgress()
@@ -44,7 +48,7 @@ extension ListPresenter: ListPresenterProtocol {
             if challenges.count == 0 {
                 self.view.showNoResult(LocalizationKey.Home.NoResultFound.localizedString())
             } else {
-                self.challenges = challenges
+                self.saveChallenges(challenges)
             }
         }) { error in
             self.view.hideProgress()
@@ -54,13 +58,14 @@ extension ListPresenter: ListPresenterProtocol {
     
     func sortChallenges() {
         var sortedChallenges:[Challenge] = []
+        
         if self.sortBy == .text {
-            sortedChallenges = self.challenges.sorted {
+            sortedChallenges = challenges.sorted {
                 $0.dataType.index() > $1.dataType.index()
             }
             self.sortBy = .image
         } else {
-            sortedChallenges = self.challenges.sorted {
+            sortedChallenges = challenges.sorted {
                 $0.dataType.index() < $1.dataType.index()
             }
             self.sortBy = .text
@@ -81,12 +86,41 @@ extension ListPresenter {
         return self.challenges.count
     }
     
-    func item(at indexPath: IndexPath) -> ListViewItemProtocol {
+    func item(at indexPath: IndexPath) -> ListViewItemProtocol? {
         return self.challenges[indexPath.row]
     }
     
     func didSelectItem(at indexPath: IndexPath) {
-        
+        self.wireframe.showDetail(self.challenges[indexPath.row])
     }
     
+}
+
+extension ListPresenter {
+    
+    func saveChallenges(_ challenges: [Challenge]) {
+        do {
+            let realm = try Realm()
+            for challengeObject in challenges {
+                let savedChallengeData = self.challenges.filter({ challenge -> Bool in
+                    return challenge.id == challengeObject.id
+                    }).first
+                
+                let challenge = Challenge()
+                //If not available in realm database so add it
+                if savedChallengeData == nil {
+                    challenge.id = challengeObject.id
+                    challenge.type = challengeObject.type
+                    challenge.date = challengeObject.date
+                    challenge.data = challengeObject.data
+                    try realm.write {
+                        realm.add(challenge)
+                    }
+                }
+            }
+            self.challenges = try Realm().objects(Challenge.self).map { $0 }
+        } catch let error {
+            Logger.log(error)
+        }
+    }
 }
