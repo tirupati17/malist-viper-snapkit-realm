@@ -35,6 +35,7 @@ final class ListViewController: BaseViewController {
         setupView()
         setupTableView()
         
+        self.refreshControl.beginRefreshing()
         self.presenter.getChallenges()
     }
     
@@ -85,15 +86,11 @@ final class ListViewController: BaseViewController {
 extension ListViewController: ListViewProtocol {
     
     func reloadData() {
+        self.navigationItem.title = "Challenges(\(self.presenter.numberOrItems(in: 0)))" // 0 = section 0
         self.listTableView.reloadData()
     }
         
-    func showProgress() {
-        self.showIndicator()
-    }
-
     func hideProgress() {
-        self.hideIndicator()
         self.refreshControl.endRefreshing()
     }
     

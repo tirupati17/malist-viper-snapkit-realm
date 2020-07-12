@@ -41,6 +41,7 @@
 		D56D15F824BB73A000690142 /* ListDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F324BB73A000690142 /* ListDetailProtocols.swift */; };
 		D56D15F924BB73A000690142 /* ListDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F424BB73A000690142 /* ListDetailInteractor.swift */; };
 		D56D15FA24BB73A000690142 /* ListDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15F524BB73A000690142 /* ListDetailWireframe.swift */; };
+		D56D15FC24BB8B1200690142 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D15FB24BB8B1200690142 /* AppDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		D56D15F324BB73A000690142 /* ListDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailProtocols.swift; sourceTree = "<group>"; };
 		D56D15F424BB73A000690142 /* ListDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailInteractor.swift; sourceTree = "<group>"; };
 		D56D15F524BB73A000690142 /* ListDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailWireframe.swift; sourceTree = "<group>"; };
+		D56D15FB24BB8B1200690142 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		E3DBCA1652015A3159801E28 /* libPods-MobileAxxessAssignmentTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MobileAxxessAssignmentTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 			children = (
 				D56D159724B80A0700690142 /* MobileAxxessAssignmentTests.swift */,
 				D56D159924B80A0700690142 /* Info.plist */,
+				D56D15FB24BB8B1200690142 /* AppDelegateTests.swift */,
 			);
 			path = MobileAxxessAssignmentTests;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D56D15FC24BB8B1200690142 /* AppDelegateTests.swift in Sources */,
 				D56D159824B80A0700690142 /* MobileAxxessAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -844,7 +848,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 495XWEJ924;
 				INFOPLIST_FILE = MobileAxxessAssignmentTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,7 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 495XWEJ924;
 				INFOPLIST_FILE = MobileAxxessAssignmentTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

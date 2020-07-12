@@ -37,10 +37,6 @@ final class ListPresenter {
 extension ListPresenter: ListPresenterProtocol {
     
     func getChallenges() {
-        //Reload from offline database
-        self.view.reloadData()
-
-        self.view.showProgress()
         self.interactor.fetchChallenges(bodyParams: nil, success: { challenges in
             self.view.hideProgress()
             self.view.removeNoResult()
@@ -51,6 +47,9 @@ extension ListPresenter: ListPresenterProtocol {
                 self.saveChallenges(challenges)
             }
         }) { error in
+            //Try to reload from offline database
+            self.view.reloadData()
+            
             self.view.hideProgress()
             self.view.showNoResult(error.localizedDescription)
         }
@@ -102,13 +101,11 @@ extension ListPresenter {
         do {
             let realm = try Realm()
             for challengeObject in challenges {
-                let savedChallengeData = self.challenges.filter({ challenge -> Bool in
-                    return challenge.id == challengeObject.id
-                    }).first
+                let savedChallengeData = try Realm().objects(Challenge.self).filter { $0.id == challengeObject.id }.first
                 
-                let challenge = Challenge()
                 //If not available in realm database so add it
                 if savedChallengeData == nil {
+                    let challenge = Challenge()
                     challenge.id = challengeObject.id
                     challenge.type = challengeObject.type
                     challenge.date = challengeObject.date

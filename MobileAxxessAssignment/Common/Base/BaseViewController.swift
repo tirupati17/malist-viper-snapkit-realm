@@ -120,8 +120,6 @@ extension BaseViewController {
     
     func setupDefaultActivityIndicator() {
         activityIndicator = UIActivityIndicatorView(style: .gray)
-        activityIndicator?.center = view.center
-        
         view.addSubview(activityIndicator!)
     }
     

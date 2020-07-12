@@ -1,9 +1,9 @@
 //
 //  LocalizationKey.swift
-//  CarFit
+//  Challenge
 //
 //  Created by Tirupati Balan on 25/06/20.
-//  Copyright © 2020 DigitalMind. All rights reserved.
+//  Copyright © 2020 Celerstudio. All rights reserved.
 //
 
 import Foundation

@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-// MARK: - Carfit
+// MARK: - Challenge
 class Challenge: Object, Codable {
     @objc dynamic var id: String?
     @objc dynamic var type: String?
