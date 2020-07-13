@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/tirupati17/malist-viper-snapkit-realm.svg?branch=master)](https://travis-ci.org/tirupati17/malist-viper-snapkit-realm)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3602b30b128d40bab1800d9adf5e7554)](https://www.codacy.com/project/tirupati17/malist-viper-snapkit-realm/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tirupati17/malist-viper-snapkit-realm&amp;utm_campaign=Badge_Grade_Dashboard)
 
-![MAList](https://raw.githubusercontent.com/tirupati17/malist-viper-snapkit-realm/master/MAList/Resources/screenshot1.PNG)
-![MAList](https://raw.githubusercontent.com/tirupati17/malist-viper-snapkit-realm/master/MAList/Resources/screenshot2.PNG)
+![MAList](https://raw.githubusercontent.com/tirupati17/malist-viper-snapkit-realm/develop/MAList/Resources/screenshot1.PNG)
+![MAList](https://raw.githubusercontent.com/tirupati17/malist-viper-snapkit-realm/develop/MAList/Resources/screenshot2.PNG)
 
 ### Description
 *MAList* is an iOS app based on __VIPER (View Interactor Presenter Entity Router)__ software architectural pattern.
