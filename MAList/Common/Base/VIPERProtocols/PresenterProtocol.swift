@@ -1,4 +1,4 @@
-protocol PresenterProtocol: class {
+protocol PresenterProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear(animated: Bool)
     func viewDidAppear(animated: Bool)

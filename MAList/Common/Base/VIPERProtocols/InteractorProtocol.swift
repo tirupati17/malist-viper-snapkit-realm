@@ -1,4 +1,4 @@
-protocol InteractorProtocol: class {
+protocol InteractorProtocol: AnyObject {
 }
 
 extension InteractorProtocol {

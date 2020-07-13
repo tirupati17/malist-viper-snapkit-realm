@@ -1,6 +1,6 @@
 import UIKit
 
-protocol WireframeProtocol: class {
+protocol WireframeProtocol: AnyObject {
     func popFromNavigationController(animated: Bool)
     func dismiss(animated: Bool)
 
@@ -25,7 +25,7 @@ class BaseWireframe {
 
 extension BaseWireframe: WireframeProtocol {
     func popFromNavigationController(animated: Bool) {
-        let _ = navigationController?.popViewController(animated: animated)
+        _ = navigationController?.popViewController(animated: animated)
     }
 
     func dismiss(animated: Bool) {

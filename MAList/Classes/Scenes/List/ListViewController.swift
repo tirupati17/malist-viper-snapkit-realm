@@ -20,7 +20,7 @@ final class ListViewController: BaseViewController {
     var presenter: ListPresenterProtocol!
     
     lazy var noResultView: UILabel = {
-        var label = UILabel.init(frame: CGRect(x: 0, y: 0, width: listTableView.frame.size.width, height: listTableView.frame.size.height))
+        var label = UILabel.init(frame: listTableView.frame)
         label.backgroundColor = UIColor.clear
         label.text = LocalizationKey.Home.NoResultFound.localizedString()
         label.textAlignment = .center
@@ -86,12 +86,10 @@ final class ListViewController: BaseViewController {
 extension ListViewController: ListViewProtocol {
     
     func reloadData() {
+        self.refreshControl.endRefreshing()
+
         self.navigationItem.title = "Challenges(\(self.presenter.numberOrItems(in: 0)))" // 0 = section 0
         self.listTableView.reloadData()
-    }
-        
-    func hideProgress() {
-        self.refreshControl.endRefreshing()
     }
     
     func removeNoResult() {

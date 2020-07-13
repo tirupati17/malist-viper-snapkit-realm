@@ -42,7 +42,7 @@ protocol ListPresenterProtocol: PresenterProtocol {
     func getChallenges()
     func sortChallenges()
     
-    // MARK - Table View
+    // MARK: - Table View
     func numberOfSections() -> Int
     func numberOrItems(in section: Int) -> Int
     func item(at indexPath: IndexPath) -> ListViewItemProtocol?
@@ -50,7 +50,7 @@ protocol ListPresenterProtocol: PresenterProtocol {
 }
 
 protocol ListInteractorProtocol: InteractorProtocol {
-    func fetchChallenges(bodyParams params: [String: Any]?, success: @escaping (([Challenge]) -> Void), failure: @escaping ((CustomError) -> Void))
+    func fetchChallenges(bodyParams params: [String: Any]?, result: @escaping (([Challenge]) -> Void))
 }
 
 protocol ListViewItemProtocol {

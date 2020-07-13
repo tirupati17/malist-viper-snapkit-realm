@@ -113,12 +113,12 @@ class ListTableViewCell: BaseTableViewCell {
             self.dateLabel.text = " \(data.dateString)"
                         
             switch data.dataType {
-                case .image:
-                    if let url = URL(string: data.dataString) {
-                        self.dataImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
-                    }
-                default:
-                    self.dataDisplayLabel.text = data.dataString
+            case .image:
+                if let url = URL(string: data.dataString) {
+                    self.dataImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+                }
+            default:
+                self.dataDisplayLabel.text = data.dataString
             }
         }
     }
