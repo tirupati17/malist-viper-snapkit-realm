@@ -1,6 +1,0 @@
-framework module Pods_MobileAxxessAssignment {
-  umbrella header "Pods-MobileAxxessAssignment-umbrella.h"
-
-  export *
-  module * { export * }
-}
