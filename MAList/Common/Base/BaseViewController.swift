@@ -75,12 +75,12 @@ extension BaseViewController {
 
 // MARK: public
 
-extension BaseViewController {
+public extension BaseViewController {
 
     /**
      Pops the top view controller from the navigation stack .
      */
-    @objc public func popViewController() {
+    @objc func popViewController() {
         _ = navigationController?.popViewController(animated: true)
     }
     

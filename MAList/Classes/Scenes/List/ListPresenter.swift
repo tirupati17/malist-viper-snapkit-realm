@@ -36,26 +36,17 @@ final class ListPresenter {
 extension ListPresenter: ListPresenterProtocol {
     
     func getChallenges() {
-        self.interactor.fetchChallenges(bodyParams: nil, success: { challenges in
-            self.view.hideProgress()
-            self.view.removeNoResult()
-
+        self.interactor.fetchChallenges(bodyParams: nil, result: { challenges in
             if challenges.count == 0 {
                 self.view.showNoResult(LocalizationKey.Home.NoResultFound.localizedString())
             } else {
                 self.challenges = challenges
             }
-        }) { error in
-            //Try to reload from offline database
-            self.view.reloadData()
-            
-            self.view.hideProgress()
-            self.view.showNoResult(error.localizedDescription)
-        }
+        })
     }
     
     func sortChallenges() {
-        var sortedChallenges:[Challenge] = []
+        var sortedChallenges: [Challenge] = []
         
         if self.sortBy == .text {
             sortedChallenges = challenges.sorted {
@@ -73,7 +64,7 @@ extension ListPresenter: ListPresenterProtocol {
 
 }
 
-// MARK - Table View
+// MARK: - Table View
 extension ListPresenter {
     
     func numberOfSections() -> Int {

@@ -22,7 +22,7 @@ class Logger {
         #endif
     }
 
-    class var sharedLogger : Logger {
+    class var sharedLogger: Logger {
         struct defaultSingleton {
             static let loggerInstance = Logger()
         }

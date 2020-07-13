@@ -1,4 +1,4 @@
-protocol ViewProtocol: class {
+protocol ViewProtocol: AnyObject {
     func showProgress()
     func hideProgress()
 }

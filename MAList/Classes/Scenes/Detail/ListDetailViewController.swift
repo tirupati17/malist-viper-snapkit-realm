@@ -86,12 +86,12 @@ extension ListDetailViewController: ListDetailViewProtocol {
             self.title = challenge.dateString
                         
             switch challenge.dataType {
-                case .image:
-                    if let url = URL(string: challenge.dataString) {
-                        self.dataImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
-                    }
-                default:
-                    self.dataDisplayLabel.text = challenge.dataString
+            case .image:
+                if let url = URL(string: challenge.dataString) {
+                    self.dataImageView.kf.setImage(with: url, placeholder: UIImage(named: "placeholder"))
+                }
+            default:
+                self.dataDisplayLabel.text = challenge.dataString
             }
         }
     }

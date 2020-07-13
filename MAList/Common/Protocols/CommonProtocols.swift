@@ -33,14 +33,14 @@ enum CustomError: LocalizedDescriptionError {
     
     var localizedDescription: String {
         switch self {
-            case .invalidArray(model: let model):
-                return "\(model) has an invalid array"
-            case .invalidDictionary(model: let model):
-                return "\(model) has an invalid dictionary"
-            case .invalidData:
-                return "Invalid data"
-            case .customError(message: let message):
-                return "\(message)"
+        case .invalidArray(model: let model):
+            return "\(model) has an invalid array"
+        case .invalidDictionary(model: let model):
+            return "\(model) has an invalid dictionary"
+        case .invalidData:
+            return "Invalid data"
+        case .customError(message: let message):
+            return "\(message)"
         }
     }
 }
