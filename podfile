@@ -9,6 +9,7 @@ def utilities
   pod 'RealmSwift'
   pod 'Alamofire'
   pod 'SnapKit'
+  pod 'SwiftLint'
 end
 
 def vendors

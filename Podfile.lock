@@ -9,12 +9,14 @@ PODS:
   - RealmSwift (5.0.3):
     - Realm (= 5.0.3)
   - SnapKit (5.0.1)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
   - RealmSwift
   - SnapKit
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SnapKit
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
@@ -30,7 +33,8 @@ SPEC CHECKSUMS:
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
   RealmSwift: 493c9f089cd3893b3959007973c0e4f640906ba0
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: ab19fb243f4a7d95996d7a07791da7e928e25604
+PODFILE CHECKSUM: ff6b74d36452a596a56e24b17776f15520c5db2e
 
 COCOAPODS: 1.9.3

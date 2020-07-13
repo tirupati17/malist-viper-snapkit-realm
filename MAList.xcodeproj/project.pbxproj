@@ -12,7 +12,6 @@
 		35B3B6A7A28FEFE4255094A1 /* libPods-MAListUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B4EEB96A3244E1C17C497C /* libPods-MAListUITests.a */; };
 		D528656C24BBFF200039DCAD /* ListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D528656B24BBFF200039DCAD /* ListViewControllerTests.swift */; };
 		D56D158124B80A0100690142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D158024B80A0100690142 /* AppDelegate.swift */; };
-		D56D158524B80A0100690142 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D158424B80A0100690142 /* SplashViewController.swift */; };
 		D56D158A24B80A0700690142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D56D158924B80A0700690142 /* Assets.xcassets */; };
 		D56D158D24B80A0700690142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56D158B24B80A0700690142 /* LaunchScreen.storyboard */; };
 		D56D159824B80A0700690142 /* MAListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D159724B80A0700690142 /* MAListTests.swift */; };
@@ -79,7 +78,6 @@
 		D545F655B8803DF8209469EF /* Pods_MAList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MAList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56D157D24B80A0100690142 /* MAList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56D158024B80A0100690142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D56D158424B80A0100690142 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		D56D158924B80A0700690142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D56D158C24B80A0700690142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D56D158E24B80A0700690142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				D56D15B224B80A5700690142 /* Classes */,
 				D56D15B124B80A4F00690142 /* Environments */,
 				D56D15B024B80A3B00690142 /* Resources */,
-				D56D158424B80A0100690142 /* SplashViewController.swift */,
 				D56D158924B80A0700690142 /* Assets.xcassets */,
 				D56D158B24B80A0700690142 /* LaunchScreen.storyboard */,
 			);
@@ -406,6 +403,7 @@
 				D56D157A24B80A0100690142 /* Frameworks */,
 				D56D157B24B80A0100690142 /* Resources */,
 				099AD007562442C3BC686286 /* [CP] Embed Pods Frameworks */,
+				D528656D24BC6D690039DCAD /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -609,6 +607,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D528656D24BC6D690039DCAD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -618,7 +634,6 @@
 			files = (
 				D56D15C424B80C2F00690142 /* FormatterProtocol.swift in Sources */,
 				D56D15D924B80EFB00690142 /* ListWireframe.swift in Sources */,
-				D56D158524B80A0100690142 /* SplashViewController.swift in Sources */,
 				D56D15DC24B80F4E00690142 /* App+Extension.swift in Sources */,
 				D56D15C124B80C2F00690142 /* BaseWireframe.swift in Sources */,
 				D56D15FA24BB73A000690142 /* ListDetailWireframe.swift in Sources */,
