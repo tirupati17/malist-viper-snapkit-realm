@@ -1,7 +1,7 @@
 ![Language](https://img.shields.io/badge/swift-5.0-brightgreen.svg)
 ![License](https://img.shields.io/github/license/JakeLin/SwiftWeather.svg?style=flat)
 [![Build Status](https://travis-ci.org/tirupati17/malist-viper-snapkit-realm.svg?branch=master)](https://travis-ci.org/tirupati17/malist-viper-snapkit-realm)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3602b30b128d40bab1800d9adf5e7554)](https://www.codacy.com/project/tirupati17/malist-viper-snapkit-realm/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tirupati17/malist-viper-snapkit-realm&amp;utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3d5687797fd74751bb95ca10bc96fefc)](https://www.codacy.com/manual/Celerstudio/malist-viper-snapkit-realm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tirupati17/malist-viper-snapkit-realm&amp;utm_campaign=Badge_Grade)
 
 ![MAList](https://raw.githubusercontent.com/tirupati17/malist-viper-snapkit-realm/develop/MAList/Resources/screenshot1.PNG)
 ![MAList](https://raw.githubusercontent.com/tirupati17/malist-viper-snapkit-realm/develop/MAList/Resources/screenshot2.PNG)
