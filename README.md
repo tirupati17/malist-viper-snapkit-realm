@@ -1,4 +1,4 @@
-![Language](https://img.shields.io/badge/swift-5.0-brightgreen.svg)
+![Language](https://img.shields.io/badge/Swift-5.0-green)
 ![License](https://img.shields.io/github/license/JakeLin/SwiftWeather.svg?style=flat)
 [![SwiftLint tirupati17](https://img.shields.io/badge/SwiftLint-tirupati17-brightgreen)](https://github.com/tirupati17/swiftlint-tirupati)  
 [![Build Status](https://app.bitrise.io/app/5f66331c3fb3b599/status.svg?token=YjBRFLcOEdbCmpBVn5Co8w)](https://app.bitrise.io/app/5f66331c3fb3b599)
