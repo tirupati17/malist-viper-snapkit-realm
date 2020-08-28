@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import UserExperior
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = initialController
         self.window?.makeKeyAndVisible()
+        
+        UserExperior.initialize("76338b1c-c45c-48a9-bfcb-9603d01756a4")
         
         return true
     }

@@ -10,6 +10,7 @@ def utilities
   pod 'Alamofire'
   pod 'SnapKit'
   pod 'SwiftLint'
+  pod 'UserExperior'
 end
 
 def vendors
